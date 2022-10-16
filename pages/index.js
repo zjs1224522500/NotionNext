@@ -2,6 +2,7 @@ import BLOG from '@/blog.config'
 import { getPostBlocks } from '@/lib/notion'
 import { getGlobalNotionData } from '@/lib/notion/getNotionData'
 import * as ThemeMap from '@/themes'
+import { generateRssToPublic } from '@/lib/rss'
 import { useGlobal } from '@/lib/global'
 const Index = props => {
   const { theme } = useGlobal()
@@ -20,7 +21,8 @@ export async function getStaticProps() {
     slug: '',
     type: 'website'
   }
-
+  const globalNotionData = await getGlobalNotionData({ from: 'rss' })
+  await generateRssToPublic(globalNotionData?.latestPosts || []) // calling to generate the feed
   // 处理分页
   const page = 1
   let postsToShow

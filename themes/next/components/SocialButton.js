@@ -24,7 +24,7 @@ const SocialButton = () => {
       {BLOG.CONTACT_EMAIL && <a target='_blank' rel='noreferrer' title={'email'} href={`mailto:${BLOG.CONTACT_EMAIL}`} >
         <i className='fas fa-envelope transform hover:scale-125 duration-150'/>
       </a>}
-      <a target='_blank' rel='noreferrer' title={'RSS'} href={'/feed'} >
+      <a target='_blank' rel='noreferrer' title={'RSS'} href={'/feed.xml'} >
         <i className='fas fa-rss transform hover:scale-125 duration-150'/>
       </a>
     </div>

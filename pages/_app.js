@@ -31,9 +31,6 @@ const Busuanzi = dynamic(() => import('@/components/Busuanzi'), { ssr: false })
 const GoogleAdsense = dynamic(() => import('@/components/GoogleAdsense'), {
   ssr: false
 })
-const Messenger = dynamic(() => import('@/components/FacebookMessenger'), {
-  ssr: false
-})
 
 const MyApp = ({ Component, pageProps }) => {
   // 外部插件
